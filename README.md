@@ -2,7 +2,7 @@ Fhenix Auto Bridge Bot 🌉
 
 A fully automated bot for bridging ETH to the Fhenix testnet. Features include customizable daily transaction targets, dynamic gas fee management, and 24/7 operation.
 
-GitHub: lameairdrop/Fhenix-autobridge-BOT
+GitHub: lameairdrop/Fhenix-auto-bridgeBot
 
 🚀 Key Features
 
@@ -32,7 +32,7 @@ A working Fhenix testnet setup
 
 Clone the Repository
 
-git clone https://github.com/lameairdrop/Fhenix-auto-bridge-BOT.git
+git clone https://github.com/lameairdrop/Fhenix-auto-bridgeBot.git
 cd Fhenix-auto-bridge-BOT
 
 
