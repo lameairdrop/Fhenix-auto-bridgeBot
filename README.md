@@ -1,63 +1,60 @@
-Fhenix Auto Bridge Bot 🌉
+🌉 Fhenix Auto Bridge Bot
 
-A fully automated bot for bridging ETH to the Fhenix testnet. Features include customizable daily transaction targets, dynamic gas fee management, and 24/7 operation.
+A fully automated bot for bridging ETH to the Fhenix testnet. Features include customizable daily transaction quotas, dynamic gas fee management, and 24/7 operation with timezone awareness.
 
 GitHub: lameairdrop/Fhenix-auto-bridgeBot
 
 🚀 Key Features
 
-Auto ETH Bridging: Automatically sends ETH to the Fhenix testnet bridge.
+🔁 Auto ETH Bridging
+Automatically sends ETH to the Fhenix testnet bridge.
 
-Gas Optimization: Smart gas fee calculation with priority support.
+⛽ Gas Optimization
+Smart gas fee calculation with configurable priority fees.
 
-Daily Quota System: Set your own min/max transactions per day.
+📊 Daily Quota System
+Set your own minimum and maximum transactions per day.
 
-Randomized Timing: Adds realistic time gaps between transactions.
+🕒 Randomized Timing
+Introduces realistic delays between transactions.
 
-Live Tracking: Real-time progress bar and transaction counter.
+📈 Live Tracking
+Real-time progress bar and transaction counter in the console.
 
-24/7 Runtime: Continuous operation with daily resets.
+🕹️ 24/7 Runtime
+Continuous operation with automatic daily resets.
 
-Timezone Support: Set your own timezone offset for accurate resets.
+🌐 Timezone Support
+Set your local timezone offset for accurate daily resets.
 
 📦 Requirements
 
-Node.js (version 18 or higher)
+Node.js v18 or higher
 
-ETH on the source chain for gas fees
+ETH on the source chain (for gas fees)
 
-A working Fhenix testnet setup
+Fhenix testnet environment
 
 🛠️ Installation & Setup
-
-Clone the Repository
-
+1. Clone the Repository
 git clone https://github.com/lameairdrop/Fhenix-auto-bridgeBot.git
 cd Fhenix-auto-bridge-BOT
 
-
-Install Dependencies
-
+2. Install Dependencies
 npm install
 
-
-Configure the Bot
+3. Configure the Bot
 
 Edit config.json with your desired settings.
 
-Set your private key as an environment variable:
+Set your private key via environment variable:
 
 PRIVATE_KEY=0xYourPrivateKeyHere
 
-
-Run the Bot
-
+4. Run the Bot
 node main.js
 
 ⚙️ Configuration (config.json)
-
-Here’s an example of the configuration structure:
-
 {
   "RPC_URL": "your_rpc_endpoint",
   "CHAIN_ID": 123,
@@ -72,100 +69,96 @@ Here’s an example of the configuration structure:
   "PROXY_ADDRESS": "0xYourProxyContractAddress"
 }
 
-🧩 Explanation of Config Fields
-
-RPC_URL: RPC endpoint for the Ethereum network
-
-CHAIN_ID: Target network chain ID
-
-MIN_TX_PER_DAY / MAX_TX_PER_DAY: Number of transactions per day
-
-MIN_AMOUNT_ETH / MAX_AMOUNT_ETH: ETH amount range per transaction
-
-MIN_DELAY_SEC / MAX_DELAY_SEC: Time between transactions (in seconds)
-
-PRIORITY_FEE_GWEI: Priority fee (in Gwei)
-
-TIMEZONE_OFFSET_MIN: Timezone offset in minutes
-
-PROXY_ADDRESS: Fhenix bridge proxy contract address
-
+🧩 Explanation of Fields
+Field	Description
+RPC_URL	Your RPC endpoint (e.g., Infura, Alchemy, etc.)
+CHAIN_ID	Chain ID for the target network
+MIN_TX_PER_DAY	Minimum number of daily transactions
+MAX_TX_PER_DAY	Maximum number of daily transactions
+MIN_AMOUNT_ETH	Minimum ETH per transaction
+MAX_AMOUNT_ETH	Maximum ETH per transaction
+MIN_DELAY_SEC	Minimum delay (in seconds) between transactions
+MAX_DELAY_SEC	Maximum delay (in seconds) between transactions
+PRIORITY_FEE_GWEI	Priority fee in Gwei
+TIMEZONE_OFFSET_MIN	Your timezone offset (in minutes)
+PROXY_ADDRESS	Fhenix bridge proxy contract address
 🎯 How It Works
+🕛 Daily Initialization
 
-Daily Initialization
+Chooses a random number of transactions for the day.
 
-Randomly selects a number of transactions for the day.
-
-Transaction Execution
+🔄 Transaction Execution
 
 Dynamically calculates gas fees.
 
 Sends ETH to the bridge contract.
 
-Waits for confirmation before proceeding.
+Waits for confirmations before continuing.
 
-Progress Monitoring
+📡 Progress Monitoring
 
-Displays live progress and transaction data.
+Displays transaction hashes, gas fees, and progress.
 
-Automatic Reset
+🧼 Automatic Reset
 
-Resets counters at midnight based on your local timezone.
+Resets transaction counters at local midnight.
 
-Continuous Operation
+♻️ Continuous Operation
 
-Repeats the cycle daily without manual intervention.
+Loops the process daily without user input.
 
 ⚠️ Notes & Warnings
 
 🧪 Testnet Only: Designed specifically for the Fhenix testnet.
 
-⛽ Gas Fees: Ensure you have enough ETH to cover transaction costs.
+⛽ Gas Fees: Ensure you have enough ETH for transaction costs.
 
-🔐 Private Key: Keep your key secure and never hard-code it.
+🔐 Private Key: Never hard-code your key or expose it publicly.
 
-🧱 Proxy Address: Double-check the proxy contract address.
+🧱 Proxy Address: Make sure the address is correct and active.
 
-❗ Use Responsibly: Understand the actions your bot will perform.
+❗ Use Responsibly: Understand what the bot is doing before running it.
 
 📁 File Structure
 Fhenix-auto-bridge-BOT/
 ├── main.js          # Main bot script
-├── config.json      # Configuration file
-├── package.json     # Dependency manifest
-└── README.md        # Project documentation
+├── config.json      # User configuration
+├── package.json     # Dependencies
+└── README.md        # This documentation
 
 📊 Real-Time Monitoring
 
-The bot logs key details to the console:
+While running, the bot logs:
 
-Transaction hashes
+✅ Transaction hashes
 
-Estimated and used gas fees
+⛽ Estimated & used gas fees
 
-Daily progress count
+📅 Progress count
 
-Error logs and retry attempts
+⚠️ Errors & retry attempts
 
-Countdown to the next reset
+⏳ Countdown to next reset
 
 🔒 Security
 
-Private key is stored via environment variable, not in config.
+🔑 Private key is loaded from environment variable only.
 
-No sensitive data is written to disk.
+🧾 No sensitive data is written to disk.
+
+🔒 Recommend using a burner wallet or testnet wallet for testing.
 
 🆘 Support
 
-For help, issues, or suggestions, please open an issue on the GitHub repository
+For help, questions, or issues, please open an issue on GitHub
 .
 
 ⏰ Daily Operation Cycle
 
-Choose a random number of transactions for the day.
+Randomly selects number of transactions for the day.
 
-Execute ETH transfers with random delays between them.
+Executes ETH transfers with randomized delays.
 
-Reset counters at local midnight.
+Resets counters at local midnight.
 
-Repeat continuously, 24/7.
+Repeats the process 24/7.
