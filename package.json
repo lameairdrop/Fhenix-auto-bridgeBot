@@ -1,0 +1,29 @@
+{
+  "name": "fhenix-bridge-bot",
+  "version": "1.0.0",
+  "description": "auto bridge bot for fhenix testnet",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [
+    "ethereum",
+    "sepolia",
+    "bot",
+    "deposits",
+    "ethers"
+  ],
+  "author": "xerdrop",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cli-progress": "^3.12.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
